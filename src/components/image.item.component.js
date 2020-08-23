@@ -6,6 +6,7 @@ function ImageItem({ image }) {
       <a href="#">
         <img src={image.src.medium} alt="" />
       </a>
+      {console.log(image.liked)}
     </div>
   );
 }

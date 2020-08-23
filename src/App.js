@@ -46,7 +46,7 @@ function App() {
         <h1 className="my-5 text-center">Image gallery</h1>
         <ImageSearch searchText={(text) => setTerm(text)} />
 
-        {!isLoading && images.length == 0 && <ImageNoFound />}
+        {!isLoading && images.length === 0 && <ImageNoFound />}
 
         {isLoading ? (
           <Preloader />
