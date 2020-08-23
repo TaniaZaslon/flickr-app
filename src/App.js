@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import { createClient } from "pexels";
 
 import ImageSearch from "./components/image.search.component";
-import ImageItem from "./components/image.item.component";
+import ImageGallery from "./components/image.gallery.component";
 import Preloader from "./components/preloader.component";
 import ImageNoFound from "./components/image.no.found.component";
 
 import "bootstrap/dist/css/bootstrap.css";
+import "react-lightbox-component/build/css/index.css";
 import "./App.css";
 
 function App() {
@@ -52,12 +53,8 @@ function App() {
           <Preloader />
         ) : (
           <div>
-            <div className="row-gallery">
-              {images.map((item, index) => {
-                return <ImageItem image={item} key={index} />;
-              })}
-            </div>
-            <div className="text-center mb-5">
+            <ImageGallery images={images} />
+            <div className="text-center mb-5 mt-2">
               <a href="https://www.pexels.com">Photos provided by Pexels</a>
             </div>
           </div>
