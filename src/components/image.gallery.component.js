@@ -2,21 +2,21 @@ import React from "react";
 import Lightbox from "react-lightbox-component";
 
 function ImageGallery({ images }) {
+  const imageList = images.map((item) => {
+    let obj = {
+      src: item.src.large,
+      title: " ",
+      description: " ",
+    };
+    return obj;
+  });
+
   return (
     <Lightbox
-      images={
-        ([] = images.map((item) => {
-          let obj = {
-            src: item.src.medium,
-            title: "",
-            description: " ",
-          };
-          return obj;
-        }))
-      }
+      images={imageList}
       renderImageFunc={(idx, image, toggleLightbox) => {
         return (
-          <div className="column-gallery">
+          <div className="column-gallery" key={idx}>
             <img
               key={idx}
               src={image.src}

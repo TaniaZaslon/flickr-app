@@ -28,6 +28,9 @@
 .lightbox-img-thumbnail {
   margin: 0;
 }
+.lightbox-backdrop {
+  right: 0;
+}
 
 @media screen and (max-width: 960px) {
   .column-gallery {
